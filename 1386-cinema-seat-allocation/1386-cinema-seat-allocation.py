@@ -1,10 +1,5 @@
 class Solution(object):
     def maxNumberOfFamilies(self, n, reservedSeats):
-        """
-        :type n: int
-        :type reservedSeats: List[List[int]]
-        :rtype: int
-        """
         res = 0
         mp = defaultdict(set)
         for r, c in reservedSeats:
