@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1386-cinema-seat-allocation](https://github.com/datanhbo08/leet-learning/tree/master/1386-cinema-seat-allocation) |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
 | [3069-distribute-elements-into-two-arrays-i](https://github.com/datanhbo08/leet-learning/tree/master/3069-distribute-elements-into-two-arrays-i) |
 | [3116-kth-smallest-amount-with-single-denomination-combination](https://github.com/datanhbo08/leet-learning/tree/master/3116-kth-smallest-amount-with-single-denomination-combination) |
 | [3471-find-the-largest-almost-missing-integer](https://github.com/datanhbo08/leet-learning/tree/master/3471-find-the-largest-almost-missing-integer) |
@@ -32,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 |  |
 | ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
 | [1927-sum-game](https://github.com/datanhbo08/leet-learning/tree/master/1927-sum-game) |
 | [3116-kth-smallest-amount-with-single-denomination-combination](https://github.com/datanhbo08/leet-learning/tree/master/3116-kth-smallest-amount-with-single-denomination-combination) |
 | [3622-check-divisibility-by-digit-sum-and-product](https://github.com/datanhbo08/leet-learning/tree/master/3622-check-divisibility-by-digit-sum-and-product) |
@@ -54,5 +56,22 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Game Theory
 |  |
 | ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
 | [1927-sum-game](https://github.com/datanhbo08/leet-learning/tree/master/1927-sum-game) |
+## Dynamic Programming
+|  |
+| ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
+## Minimax
+|  |
+| ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
+## Prefix Sum
+|  |
+| ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
+## Zero-Sum Game
+|  |
+| ------- |
+| [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
 <!---LeetCode Topics End-->
