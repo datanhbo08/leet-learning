@@ -1,38 +1,64 @@
 class Solution:
     def lexGreaterPermutation(self, s: str, target: str) -> str:
-        n = len(s)                  # Length of the source string
-        fm = defaultdict(int)       # Frequency map of characters in s
-        for c in s: 
-            fm[c] += 1
-        res = []                    # Prefix result list
+        n = len(s)
+        counts = [0] * 26     # counts[c] = how many of letter c are left unused
+        for ch in s:
+            counts[ord(ch) - 97] += 1
 
-        for ti in range(n):         # Iterate through each character index of target
-            t = target[ti]          # Current character of target
-            if fm[t] > 0:           # If character is available in frequency map
-                fm[t] -= 1          # Use the character temporarily
-                largest = []        # Build the largest possible suffix with remaining chars
-                for ci in range(25, -1, -1):
-                    c = chr(ci + ord('a'))
-                    if fm[c] > 0: 
-                        largest.append(c * fm[c])
+        res = [''] * n   # final answer, built position by position
+        stack = []       # positions where we "tied" with target (matched exactly)
 
-                # If remaining largest string exceeds target suffix, lock character in
-                if "".join(largest) > target[ti + 1:]: 
-                    res.append(t)
-                    continue
-                fm[t] += 1          # Backtrack if it doesn't satisfy the condition
-            
-            # Find the next strictly greater character than t to diverge
-            for nti in range(ord(t) - ord('a') + 1, 26):
-                c = chr(nti + ord('a'))
-                if fm[c] > 0: 
-                    res.append(c)
-                    fm[c] -= 1 
-                    smallest = []   # Build the smallest possible suffix to minimize result
-                    for ci in range(26):
-                        c = chr(ci + ord('a'))
-                        if fm[c] > 0:
-                            smallest.append(c * fm[c]) 
-                    return "".join(res + smallest)
-            return ""
-        return ""
+        def smallest_greater(t_idx):
+            # find smallest available letter strictly greater than letter t_idx
+            for c in range(t_idx + 1, 26):
+                if counts[c] > 0:
+                    return c
+            return -1
+
+        def fill_ascending():
+            # use up all remaining letters in sorted (smallest-first) order
+            parts = []
+            for c in range(26):
+                if counts[c] > 0:
+                    parts.append(chr(c + 97) * counts[c])
+            return ''.join(parts)
+
+        def backtrack():
+            # undo ties one at a time, trying to diverge strictly greater at an earlier position
+            while stack:
+                j = stack.pop()
+                tj_idx = ord(target[j]) - 97
+                counts[tj_idx] += 1         # give back the letter used at j
+                c_idx = smallest_greater(tj_idx)   # try strictly greater letter here instead
+                if c_idx != -1:
+                    counts[c_idx] -= 1
+                    res[j] = chr(c_idx + 97)
+                    return ''.join(res[:j + 1]) + fill_ascending()
+                # else position j is also stuck -> keep popping further back
+            return ""   # ran out of positions to backtrack -> no answer
+
+        i = 0
+        while i < n:
+            t_idx = ord(target[i]) - 97
+
+            if counts[t_idx] > 0:
+                # tie: match target[i] exactly, remember this choice, move on
+                counts[t_idx] -= 1
+                res[i] = target[i]
+                stack.append(i)
+                i += 1
+                continue
+
+            # can't tie -> try to place a letter strictly greater than target[i]
+            c_idx = smallest_greater(t_idx)
+            if c_idx != -1:
+                counts[c_idx] -= 1
+                res[i] = chr(c_idx + 97)
+                return ''.join(res[:i + 1]) + fill_ascending()
+
+            # dead end here -> backtrack through previous ties
+            return backtrack()
+
+        # loop finished: res == target exactly, which is NOT strictly greater
+        # -> must backtrack to find a strictly greater arrangement
+        return backtrack()
