@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0014-longest-common-prefix](https://github.com/datanhbo08/leet-learning/tree/master/0014-longest-common-prefix) |
 | [1386-cinema-seat-allocation](https://github.com/datanhbo08/leet-learning/tree/master/1386-cinema-seat-allocation) |
 | [1872-stone-game-viii](https://github.com/datanhbo08/leet-learning/tree/master/1872-stone-game-viii) |
 | [2091-removing-minimum-and-maximum-from-array](https://github.com/datanhbo08/leet-learning/tree/master/2091-removing-minimum-and-maximum-from-array) |
@@ -66,6 +67,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0014-longest-common-prefix](https://github.com/datanhbo08/leet-learning/tree/master/0014-longest-common-prefix) |
 | [1927-sum-game](https://github.com/datanhbo08/leet-learning/tree/master/1927-sum-game) |
 | [2904-shortest-and-lexicographically-smallest-beautiful-string](https://github.com/datanhbo08/leet-learning/tree/master/2904-shortest-and-lexicographically-smallest-beautiful-string) |
 | [3720-lexicographically-smallest-permutation-greater-than-target](https://github.com/datanhbo08/leet-learning/tree/master/3720-lexicographically-smallest-permutation-greater-than-target) |
@@ -142,4 +144,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2265-count-nodes-equal-to-average-of-subtree](https://github.com/datanhbo08/leet-learning/tree/master/2265-count-nodes-equal-to-average-of-subtree) |
+## Trie
+|  |
+| ------- |
+| [0014-longest-common-prefix](https://github.com/datanhbo08/leet-learning/tree/master/0014-longest-common-prefix) |
 <!---LeetCode Topics End-->
